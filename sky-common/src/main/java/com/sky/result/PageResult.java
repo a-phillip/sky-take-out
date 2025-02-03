@@ -19,4 +19,15 @@ public class PageResult implements Serializable {
 
     private List records; //当前页数据集合
 
+    private  Integer code;
+
+    private String msg;
+
+    public static PageResult success(List data){
+        return new PageResult(data.size(),data,1,"success");
+    }
+    public static PageResult error(String msg){
+        return new PageResult(0,null,0,msg);
+    }
+
 }
